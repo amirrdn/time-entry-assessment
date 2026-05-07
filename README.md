@@ -1,4 +1,4 @@
-# Amir Time Entry
+# Time Entry Interface
 
 Laravel 11 + Vue 3 (Composition API) app for entering and viewing employee time entries.
 

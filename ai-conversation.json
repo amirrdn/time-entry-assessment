@@ -1,0 +1,131 @@
+{
+  "project": "amir-time-entry",
+  "exercise": "Laravel + Vue Time Entry Interface",
+  "exported_at": "2026-05-06T16:12:00+07:00",
+  "conversation_summary": {
+    "objective": "Build a Laravel 11 + Vue 3 (Composition API) time entry interface with relational validation, performance-aware metadata loading, and keyboard-friendly UX.",
+    "major_decisions": [
+      "Used Laravel + Inertia + Vue 3 Composition API with Tailwind.",
+      "Kept authentication scaffold installed but made dashboard publicly accessible to match the requirement that authentication is not required.",
+      "Implemented backend-first validation for relational integrity and business rules.",
+      "Added metadata caching on the New Entries tab to avoid duplicate API requests per company.",
+      "Implemented row-level validation feedback for bulk insert UX.",
+      "Added edit flow for existing entries from the History tab using a dedicated modal component and update endpoint.",
+      "Added faster data entry utilities (duplicate row and reuse last row values).",
+      "Expanded History experience with summary totals, sorting, searching, filtering, and pagination."
+    ],
+    "implemented_scope": [
+      "Database schema, models, and relationships (including pivot tables).",
+      "Seeders and factories with realistic relational data.",
+      "API endpoints for companies, metadata, and time entries (index + bulk store + update).",
+      "Dashboard with global company filter and tabbed interface.",
+      "New Entries tab with dynamic rows, keyboard support, row duplication/reuse, and row-level error rendering.",
+      "History tab with reactive filtering, search, sorting, loading indicator, pagination, summary totals, and edit modal."
+    ]
+  },
+  "messages": [
+    {
+      "id": 1,
+      "role": "user",
+      "topic": "Initial setup",
+      "content_summary": "Requested Laravel 11 + Vue 3 + Vite setup steps and practical terminal guidance."
+    },
+    {
+      "id": 2,
+      "role": "assistant",
+      "topic": "Project bootstrap",
+      "content_summary": "Provided and executed setup workflow for Laravel, Breeze (Vue), Vite, and initial component structure."
+    },
+    {
+      "id": 3,
+      "role": "user",
+      "topic": "Data layer",
+      "content_summary": "Requested migrations and Eloquent models according to the provided database specification."
+    },
+    {
+      "id": 4,
+      "role": "assistant",
+      "topic": "Migrations and models",
+      "content_summary": "Created tables, pivot tables, and model relationships; verified migration success."
+    },
+    {
+      "id": 5,
+      "role": "user",
+      "topic": "Database configuration",
+      "content_summary": "Switched from sqlite to MySQL and requested creation of database `time_track`."
+    },
+    {
+      "id": 6,
+      "role": "assistant",
+      "topic": "MySQL integration",
+      "content_summary": "Configured `.env`, created MySQL database, and migrated schema after valid credentials were provided."
+    },
+    {
+      "id": 7,
+      "role": "user",
+      "topic": "Seeder generation",
+      "content_summary": "Requested realistic data seeding with relationship constraints and current-month entries."
+    },
+    {
+      "id": 8,
+      "role": "assistant",
+      "topic": "Factories and seeders",
+      "content_summary": "Implemented factories and DatabaseSeeder; added guard checks for one-project-per-date rule."
+    },
+    {
+      "id": 9,
+      "role": "user",
+      "topic": "API and request validation",
+      "content_summary": "Requested FormRequest validation, business rule enforcement, and controller/resource structure."
+    },
+    {
+      "id": 10,
+      "role": "assistant",
+      "topic": "Backend API",
+      "content_summary": "Added StoreTimeEntryRequest, TimeEntryController (index/store/getMetaData), and TimeEntryResource with eager loading."
+    },
+    {
+      "id": 11,
+      "role": "user",
+      "topic": "Frontend tabs",
+      "content_summary": "Requested Dashboard, New Entries, and History tabs with global company filter and reactive behavior."
+    },
+    {
+      "id": 12,
+      "role": "assistant",
+      "topic": "Frontend implementation",
+      "content_summary": "Implemented tab layout, New Entries dynamic table, metadata caching, keyboard UX, History data display/search/sorting/pagination, and summary totals."
+    },
+    {
+      "id": 13,
+      "role": "user",
+      "topic": "Error fixes and polish",
+      "content_summary": "Reported runtime/UX issues and requested cleaner output/messages."
+    },
+    {
+      "id": 14,
+      "role": "assistant",
+      "topic": "Stability and cleanup",
+      "content_summary": "Fixed guest layout crash, refined validation messages to use employee names, cleaned unused components, and improved README."
+    },
+    {
+      "id": 15,
+      "role": "user",
+      "topic": "Bonus completion",
+      "content_summary": "Requested completion of remaining bonus scope including edit entries and faster data entry."
+    },
+    {
+      "id": 16,
+      "role": "assistant",
+      "topic": "Final bonus implementation",
+      "content_summary": "Implemented update endpoint with validation, added History edit modal component, and added duplicate/reuse-row behavior in New Entries."
+    }
+  ],
+  "sanitization": {
+    "contains_secrets": false,
+    "notes": [
+      "This file contains summaries and does not include raw credentials, API keys, or private tokens.",
+      "If raw chat logs are added later, re-check and redact sensitive values before submission."
+    ]
+  }
+}
